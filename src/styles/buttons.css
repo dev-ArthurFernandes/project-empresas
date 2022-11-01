@@ -11,12 +11,17 @@
     border: none;
     color: var(--color-white);
     background-color: var(--color-brand);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 150%;
 }
 
-#selectSector p{
-    width: 100%;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 27px;
+#selectSector:focus{
+    outline: none;
+}
+
+#selectSector option{
+    background-color: var(--color-white);
+    color: var(--color-black);
+    cursor: pointer;
 }
