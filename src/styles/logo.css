@@ -1,0 +1,11 @@
+.logoKenzieCompanies{
+    width: fit-content;
+    height: 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#logo_title{
+    padding-top: 4px;
+}
