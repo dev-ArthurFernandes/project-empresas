@@ -1,0 +1,14 @@
+.container{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 23px;
+}
+
+
+@media(max-width: 500px){
+    .container{
+        width: 90%;
+    }
+}
