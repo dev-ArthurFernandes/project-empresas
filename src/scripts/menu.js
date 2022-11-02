@@ -10,6 +10,14 @@ function mainMenu(page){
         menu_btn.classList.toggle('ativar')
         buttonsDiv.classList.toggle('showMenu')
     })
+
+    btn_1.addEventListener('click', () => {
+        window.location.assign(`/pages/${btn_1.innerHTML.toLowerCase()}/index.html`)
+    })
+
+    btn_2.addEventListener('click', () => {
+        window.location.assign(`/pages/${btn_2.innerHTML.toLowerCase()}/index.html`)
+    })
 }
 
 export default mainMenu
