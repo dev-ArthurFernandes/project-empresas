@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="/src/styles/globalStyles.css">
     <link rel="stylesheet" href="/src/styles/container.css">
     <link rel="stylesheet" href="/src/styles/logo.css">
-    <link rel="stylesheet" href="/src/styles/buttons.css">
+    <link rel="stylesheet" href="/src/styles/selectSector.css">
+    <link rel="stylesheet" href="/src/styles/animations.css">
     <link rel="stylesheet" href="styles/header.css ">
     <link rel="stylesheet" href="styles/companiesList.css ">
     <script defer type='module' src="index.js"></script>
@@ -21,24 +22,37 @@
                 <img id="logo_img" src="/src/img/logo_img.svg" alt="logo">
                 <img id="logo_title" src="/src/img/Kenzie Empresas.svg" alt="Kenzie Empresas">
             </div>
-            <div class="Menu">
-                <img src="/src/img/Open_Menu.png" alt="Menu">
-            </div>
-            <div class="buttons">
-                <button id="login_btn">Login</button>
-                <button id="register_btn">Cadastro</button>
-            </div>
+            <button class="Menu">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+        </div>
+        <div class="buttons">
+            <button id="btn_1">Login</button>
+            <button id="btn_2">Cadastro</button>
         </div>
     </header>
     <main>
         <div class="container">
-            <select type="" id="selectSector">
-                   <option value="">Selecionar Setor&hellip;</option>
-                   <option value="1">1</option>
-                   <option value="2">2</option>
-                   <option value="3">3</option>
-
-            </select>
+           
+            <section>
+                <div class="selectSectorDiv">
+                    <input id="selectSector" type="text" placeholder="Selecionar Setor" name="sectors" readonly>
+                    <img src="/src/img/Arrow_down.png" alt="Arrow_down">
+                </div>
+                <div class="dropDown">
+                    <div class="item">Todos</div>
+                    <div class="item">Alimenticio</div>
+                    <div class="item">Varejo</div>
+                    <div class="item">Textil</div>
+                    <div class="item">Manufatura</div>
+                    <div class="item">Aeroespacial</div>
+                    <div class="item">Automotiva</div>
+                    <div class="item">TI</div>
+                    <div class="item">Atacado</div>
+                </div>
+            </section>
             <section>
                 <ol class="companiesList">
                     <li class="card">
@@ -66,5 +80,6 @@
             </section>
         </div>
     </main>
+
 </body>
 </html>

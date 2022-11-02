@@ -1,14 +1,7 @@
 .container{
-    width: 60%;
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-top: 23px;
-}
-
-
-@media(max-width: 500px){
-    .container{
-        width: 90%;
-    }
+    padding: 0 20px;
 }
