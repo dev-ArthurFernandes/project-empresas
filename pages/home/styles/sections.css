@@ -1,0 +1,34 @@
+main > .container{
+    display: flex;
+    gap: 100px;
+    margin-top: 10px;
+}
+
+.left{
+    width: 50%;
+    height: 743px;
+}
+
+.left .image{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.right{
+    width: 50%;
+    height: 743px;
+    overflow: hidden;
+}
+
+@media(max-width: 1024px){
+    .left{
+        display: none;
+    }
+    .right{
+        width: 100%;
+    }
+}
