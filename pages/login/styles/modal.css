@@ -1,0 +1,11 @@
+.modal{
+    width: 506px;
+    background-color: rgba(255, 255,255,0.9);
+    padding: 40px 20px;
+}
+
+@media(max-width: 1024px){
+    .modal{
+        width: 100%;
+    }
+}

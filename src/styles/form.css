@@ -1,0 +1,76 @@
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.title{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.title > h2{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 48px;
+}
+
+.title > p{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.inputs input{
+    height: 52px;
+    padding-left: 20px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    border: 1px solid rgba(0,0,0,0.2);
+}
+
+.inputs input:focus{
+    outline: none;
+}
+
+.loginForm button{
+    height: 48px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    cursor: pointer;
+}
+
+.loginForm > p{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+#login{
+    background-color: var(--color-brand);
+    color: var(--color-white);
+    border: none;
+}
+
+#cadastro{
+    background-color: transparent;
+    border:1px solid var(--color-brand);
+    color: var(--color-brand);
+}
