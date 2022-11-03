@@ -36,7 +36,7 @@ function nivel(){
 
     const dropDown = document.querySelector(".selectOptions")
 
-    const input = document.querySelector('#nivel')
+    const input = document.querySelector('#professional_level')
 
     const selectSectorDiv = document.querySelector('.select')
 

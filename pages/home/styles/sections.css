@@ -21,7 +21,7 @@ main > .container{
 .right{
     width: 50%;
     height: 743px;
-    overflow: hidden;
+    position: relative;
 }
 
 @media(max-width: 1024px){

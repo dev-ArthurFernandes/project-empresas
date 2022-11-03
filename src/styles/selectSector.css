@@ -42,6 +42,8 @@
     overflow: auto;
     transition: .5s;
     transform: translate(0px, -10px);
+    position: absolute;
+    top: 55px;
 }
 
 .dropDown::-webkit-scrollbar{

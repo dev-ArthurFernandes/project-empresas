@@ -25,8 +25,12 @@ async function Login(body){
     })
     .then(resp => resp.json())
     .then(resp => {
-        localStorage.setItem('@KenzieEmpresas:Token', JSON.stringify(resp))
-        AuthorizationUser(resp.token)
+        if(resp.error){
+            alert(`${resp.error}`)
+        }else if(resp.token){
+            localStorage.setItem('@KenzieEmpresas:Token', JSON.stringify(resp.token))
+            AuthorizationUser(resp.token)
+        }
     })
     .catch(err => console.log(err))
 }
@@ -40,7 +44,7 @@ async function AuthorizationUser(token){
     })
     .then(resp => resp.json())
     .then(resp => {
-        if(resp.is_adm){
+        if(resp.is_admin){
             window.location.assign("/pages/admDashbord/index.html")
         }else{
             window.location.assign('/pages/userDashbord/index.html')
@@ -49,4 +53,16 @@ async function AuthorizationUser(token){
     .catch(err => console.log(err))
 }
 
-export {listAllCompanies, Login, AuthorizationUser}
+async function register(body){
+    await fetch(`${baseURL}/auth/register`, {
+        'method': "POST",
+        'headers': {
+            'Content-Type': 'application/json'
+        },
+        'body': JSON.stringify(body)
+    })
+    .then(resp => resp.json())
+    .then(resp => console.log(resp))
+}
+
+export {listAllCompanies, Login, AuthorizationUser, register}
