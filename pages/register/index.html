@@ -13,9 +13,10 @@
     <link rel="stylesheet" href="/src/styles/header.css">
     <link rel="stylesheet" href="/src/styles/form.css">
     <link rel="stylesheet" href="/src/styles/modal.css">
+    <link rel="stylesheet" href="/src/styles/animations.css">
     <link rel="stylesheet" href="styles/main.css">
     <script defer type="module" src="index.js"></script>
-    <title>Empresas - Login</title>
+    <title>Empresas - Cadastro</title>
 </head>
 <body>
     <header class="header">
@@ -31,24 +32,29 @@
             </button>
         </div>
         <div class="buttons">
-            <button id="btn_1">Login</button>
-            <button id="btn_2">Cadastro</button>
+            <button id="btn_1" class="menu_login">Login</button>
+            <button id="btn_2" class="menu_register">Cadastro</button>
         </div>
     </header>
     <main>
         <div class="modal">
-            <form class="loginForm">
+            <form class="registerForm">
                 <div class="title">
-                    <h2>Login</h2>
-                    <p>Preencha os campos para realizar o login</p>
+                    <h2>Cadastre-se</h2>
                 </div>
                 <div class="inputs">
+                    <input type="text" placeholder="Seu nome" name="nome" id="nome">
                     <input type="email" placeholder="Seu e-mail" name="email" id="email">
                     <input type="password" placeholder="Sua senha" name="senha" id="senha">
+                    <div class="select"><input type="text" placeholder="Nivel profissional" readonly name="nivel" id="nivel"></div>
+                    <div class="selectOptions">
+                        <div class="item">Júnior</div>
+                        <div class="item">Plenor</div>
+                        <div class="item">Sênior</div>
+                    </div>
                 </div>
-                <button id="login">Login</button>
-                <p>Ou</p>
-                <button id="cadastro">Cadastre-se</button>
+                <button id="btn_form1">Cadastre-se</button>
+                <button id="btn_form2">Retornar</button>
             </form>
         </div>
     </main>

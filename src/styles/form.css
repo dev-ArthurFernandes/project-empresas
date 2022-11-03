@@ -3,6 +3,7 @@ form{
     display: flex;
     flex-direction: column;
     gap: 16px;
+    position: relative;
 }
 
 .title{
@@ -43,7 +44,7 @@ form{
     outline: none;
 }
 
-.loginForm button{
+button{
     height: 48px;
     font-weight: 700;
     font-size: 18px;
@@ -63,14 +64,46 @@ form{
     line-height: 19px;
 }
 
-#login{
+#btn_form1{
     background-color: var(--color-brand);
     color: var(--color-white);
     border: none;
 }
 
-#cadastro{
+#btn_form2{
     background-color: transparent;
     border:1px solid var(--color-brand);
     color: var(--color-brand);
+}
+
+.select{
+    width: 100%;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+}
+
+.select::after{
+    content: url('/src/img/Vetor.png');
+    position: absolute;
+    right: 15px;
+    top: 18px;
+    transform-origin: center;
+    animation: vetor 1s linear;
+}
+
+.selectOptions{
+    width: 100%;
+    background-color: var(--color-white);
+    display: none;
+    flex-direction: column;
+    border: 1px solid var(--color-brand);
+    position: absolute;
+    bottom: 30px;
+}
+
+
+#nivel{
+    width: 100%;
+    cursor: pointer;
 }

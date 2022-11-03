@@ -1,4 +1,4 @@
-function mainMenu(page){
+function mainMenu(){
     const menu_btn = document.querySelector(".Menu")
 
     const buttonsDiv = document.querySelector('.buttons')
