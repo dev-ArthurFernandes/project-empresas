@@ -39,16 +39,22 @@
         <div class="modal">
             <form class="loginForm">
                 <div class="title">
-                    <h2>Login</h2>
-                    <p>Preencha os campos para realizar o login</p>
+                    <h2>Cadastre-se</h2>
                 </div>
                 <div class="inputs">
+                    <input type="text" placeholder="Seu nome" name="nome" id="nome">
                     <input type="email" placeholder="Seu e-mail" name="email" id="email">
                     <input type="password" placeholder="Sua senha" name="senha" id="senha">
+                    <div class="select"><input type="text" placeholder="Nível profissional" readonly name="nivel" id="nivel"></div>
+                    <div class="selectOptions">
+                        <div class="item">Júnior</div>
+                        <div class="item">Pleno</div>
+                        <div class="item">Sênior</div>
+                    </div>
                 </div>
-                <button id="form_btn1">Login</button>
-                <p>Ou</p>
-                <button id="form_btn2">Cadastre-se</button>
+                <button id="form_btn1">Cadastre-se</button>
+                <button id="form_btn2">Retornar</button>
+
             </form>
         </div>
     </main>
