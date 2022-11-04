@@ -65,4 +65,48 @@ async function register(body){
     .then(resp => console.log(resp))
 }
 
-export {listAllCompanies, Login, AuthorizationUser, register}
+async function listAllDepartments(token){
+    const response = await fetch(`${baseURL}/departments`, {
+        'method': "GET",
+        'headers': {
+            'Authorization': `Bearer ${token}`
+        }
+    })
+    .then(resp => resp.json())
+    .then(resp => {
+        return resp
+    })
+    .catch(err => err.error)
+    
+    return response
+}
+
+async function listAllUsers(token){
+    const response = await fetch(`${baseURL}/users`, {
+        'method': 'GET',
+        'headers': {
+            'Authorization': `Bearer ${token}`
+        }
+    })
+    .then(resp => resp.json())
+    .then(resp => resp)
+    .catch(err => console.log(err.error))
+
+    return response
+}
+
+async function getCompany(token,uuid){
+    const response = await fetch(`${baseURL}/departments/${uuid}`, {
+        'method': "GET",
+        'headers': {
+            'Authorization': `Bearer ${token}`
+        }
+    })
+    .then(resp => resp.json())
+    .then(resp => console.log(resp))
+    .catch(err => console.log(err.error))
+    
+    return response
+}
+
+export {listAllCompanies, Login, AuthorizationUser, register, listAllDepartments, listAllUsers, getCompany}
