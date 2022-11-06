@@ -1,3 +1,6 @@
+import { renderDepartments } from "./admDashbord.js"
+import { listAllCompanies } from "./request.js"
+
 function sector(c){
     const itens = document.querySelectorAll(".item")
 
@@ -63,11 +66,24 @@ function nivel(){
     
 }
 
-function company(){
-    const itens = document.querySelectorAll(".item")
-
+async function company(){
+    
     const dropDown = document.querySelector(".dropdown")
 
+    const companies = await listAllCompanies()
+
+    companies.forEach( async (element) => {
+        const company = element.name
+
+        const item = document.createElement("div")
+        item.classList = 'item'
+        item.innerHTML = company
+
+        dropDown.append(item)
+    })
+
+    const itens = document.querySelectorAll(".item")
+    
     const input = document.querySelector('#company')
 
     const select = document.querySelector('#selectCompany')
@@ -92,9 +108,9 @@ function company(){
         item.addEventListener('click', () => {
             input.value = item.innerHTML
             dropDown.style.display = 'none'
+            renderDepartments(item.innerHTML)
         })
     })
-    
 }
 
 export {sector, nivel, company}

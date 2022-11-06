@@ -65,4 +65,88 @@ async function register(body){
     .then(resp => console.log(resp))
 }
 
-export {listAllCompanies, Login, AuthorizationUser, register}
+async function listAllDepartments(token){
+    const response = await fetch(`${baseURL}/departments`, {
+        'method': "GET",
+        'headers': {
+            'Authorization': `Bearer ${token}`
+        }
+    })
+    .then(resp => resp.json())
+    .then(resp => {
+        return resp
+    })
+    .catch(err => err.error)
+    
+    return response
+}
+
+async function listAllUsers(token){
+    const response = await fetch(`${baseURL}/users`, {
+        'method': 'GET',
+        'headers': {
+            'Authorization': `Bearer ${token}`
+        }
+    })
+    .then(resp => resp.json())
+    .then(resp => resp)
+    .catch(err => console.log(err))
+
+    return response
+}
+
+async function getCompany(token,uuid){
+    const response = await fetch(`${baseURL}/departments/${uuid}`, {
+        'method': "GET",
+        'headers': {
+            'Authorization': `Bearer ${token}`
+        }
+    })
+    .then(resp => resp.json())
+    .then(resp => resp)
+    .catch(err => console.log(err.error))
+    
+    return response
+}
+
+async function hire(token, body){
+    await fetch(`${baseURL}/departments/hire/`, {
+        'method': "PATCH",
+        'headers': {
+            'Content-Type': 'application/json',
+            'Authorization': ` Bearer ${token}`
+        },
+        'body': JSON.stringify(body)
+    })
+    .then(resp => resp.json())
+    .then(resp => resp)
+    .catch(err => console.log(err.error))
+}
+
+async function dismiss(token, uuid){
+    await fetch(`${baseURL}/departments/dismiss/${uuid}`, {
+        'method': "PATCH",
+        'headers': {
+            'Authorization': `Bearer ${token}`
+        }
+    })
+    .then(resp => resp.json())
+    .then(resp => resp)
+    .catch(err => console.log(err.error))
+}
+
+async function editEmployee(uuid, body, token){
+    await fetch(`${baseURL}/admin/update_user/${uuid}`, {
+        'method': "PATCH",
+        'headers': {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+        'body': JSON.stringify(body)
+    })
+    .then(resp => resp.json())
+    .then(resp => console.log(resp))
+    .catch(err => console.log(err))
+}
+
+export {listAllCompanies, Login, AuthorizationUser, register, listAllDepartments, listAllUsers, getCompany, hire, dismiss, editEmployee}
