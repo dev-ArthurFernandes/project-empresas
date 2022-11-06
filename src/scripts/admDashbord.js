@@ -1,4 +1,4 @@
-import { getCompany, listAllDepartments, listAllUsers } from "./request.js"
+import { getCompany, listAllCompanies, listAllDepartments, listAllUsers } from "./request.js"
 
 function createCard(element, companyName){
 
@@ -57,21 +57,31 @@ function createCard(element, companyName){
     return li
 }
 
-async function renderDepartments(token){   
+async function renderDepartments(filter){   
     
+    const token = JSON.parse(localStorage.getItem('@KenzieEmpresas:Token'))
+
     const list = document.querySelector('.list1')
     list.innerHTML = ''
 
     const departments = await listAllDepartments(token)
 
     departments.forEach(element => {
-        const card = createCard(element, element.companies.name)
+        if(!filter){
+            const card = createCard(element, element.companies.name)
 
-        list.append(card)
+            list.append(card)
+        }else if(element.companies.name === filter){
+            const card = createCard(element, element.companies.name)
+
+            list.append(card)
+        }
     });
 }
 
-async function renderAllUsers(token){
+async function renderAllUsers(){
+
+    const token = JSON.parse(localStorage.getItem('@KenzieEmpresas:Token'))
 
     const list = document.querySelector('.list2')
     list.innerHTML = ''
@@ -86,4 +96,4 @@ async function renderAllUsers(token){
 
 }
 
-export {renderDepartments, renderAllUsers}
+export {renderDepartments, renderAllUsers, createCard }

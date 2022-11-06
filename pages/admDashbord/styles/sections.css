@@ -19,6 +19,7 @@
     align-items: center;
     border-radius: 15px;
     position: relative;
+    cursor: pointer;
 }
 
 .headerSection > div::after{
@@ -38,6 +39,7 @@
     line-height: 24px;
     outline: none;
     background: transparent;
+    cursor: pointer;
 }
 
 .headerSection > button{
