@@ -1,5 +1,5 @@
 import { createCard, renderDepartments } from "./admDashbord.js"
-import { dismiss, editEmployee, hire, listAllDepartments, listAllUsers } from "./request.js"
+import { dismiss, editDepartment, editEmployee, hire, listAllDepartments, listAllUsers } from "./request.js"
 
 const token = JSON.parse(localStorage.getItem('@KenzieEmpresas:Token'))
 
@@ -223,6 +223,28 @@ async function modal(uuid,type){
         div1.append(input1)
         div2.append(input2)
         modal.append(h2, div1, div2, button, closeModal, dropDown1, dropDown2)
+        modalSection.append(modal)
+        body.append(modalSection)
+    }else if(type === 'departmentEdit'){
+        const h2 = document.createElement('h2')
+        h2.innerText = 'Editar Departamento'
+
+        const textArea = document.createElement('textarea')
+        textArea.placeholder = 'Valores anteriores da descrição'
+        textArea.id = 'textArea'
+
+        const button = document.createElement('button')
+        button.innerText = 'Salvar alterção'
+        button.classList = 'editar'
+        
+        button.addEventListener('click', () => {
+            let body = {
+                "description": textArea.value
+            }
+            editDepartment(uuid, body,token)
+        })
+
+        modal.append(h2, textArea, button, closeModal)
         modalSection.append(modal)
         body.append(modalSection)
     }

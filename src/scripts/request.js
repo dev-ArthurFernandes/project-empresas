@@ -74,6 +74,7 @@ async function listAllDepartments(token){
     })
     .then(resp => resp.json())
     .then(resp => {
+        console.log(resp)
         return resp
     })
     .catch(err => err.error)
@@ -149,4 +150,18 @@ async function editEmployee(uuid, body, token){
     .catch(err => console.log(err))
 }
 
-export {listAllCompanies, Login, AuthorizationUser, register, listAllDepartments, listAllUsers, getCompany, hire, dismiss, editEmployee}
+async function editDepartment(uuid, body, token){
+    await fetch(`${baseURL}/department/${uuid}`, {
+        'method': 'PATCH',
+        'headers': {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+        'body': JSON.stringify(body)
+    })
+    .then(resp => resp.json())
+    .then(resp => resp)
+    .catch(err => console.log(err.error))
+}
+
+export {listAllCompanies, Login, AuthorizationUser, register, listAllDepartments, listAllUsers, getCompany, hire, dismiss, editEmployee, editDepartment}

@@ -13,7 +13,7 @@ function loadDashbord(){
 
     renderDepartments()
     renderAllUsers()
-    modal('3b5e7b1e-5890-4410-96ab-1649460c8ccb', 'editarUser')
+    modal('e66f05d9-6093-4e32-9f70-4bcc213e53a5', 'departmentEdit')
 }
 
 loadDashbord()
