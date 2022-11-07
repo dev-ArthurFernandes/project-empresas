@@ -13,7 +13,14 @@ function loadDashbord(){
 
     renderDepartments()
     renderAllUsers()
-    modal('3b5e7b1e-5890-4410-96ab-1649460c8ccb', 'editarUser')
+
+    const create = document.querySelector('.createDepartements')
+
+    const eventoDeClick = () => {create.addEventListener('click', () => {
+        modal(0,'createDepartment')
+    })}
+
+    eventoDeClick()
 }
 
 loadDashbord()

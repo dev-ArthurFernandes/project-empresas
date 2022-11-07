@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="styles/main.css ">
     <link rel="stylesheet" href="styles/sections.css ">
     <script defer type='module' src="index.js"></script>
-    <title>Empresas - Admin</title>
+    <title>Empresas - Usuário</title>
 </head>
 <body>
     <header class="header">
@@ -36,32 +36,27 @@
     </header>
     <main>
         <div class="container">
-            <section>
-                <div class="headerSection">
-                    <h2>Departamentos</h2>
-                    <div id="selectCompany"><input type="text" placeholder="Selecionar Empresa" readonly id="company"></div>
-                    <button class="createDepartements">
-                        <img src="/src/img/plus.png" alt="plus">
-                        <p>Criar</p>
-                    </button>
-                </div>
-                <div class="departmentsList">
-                    <ol class="list1">
-                    </ol>
-                </div>
+            <section class="section1">
+                <h2 id="nome">USERNAME</h2>
+                <span>
+                    <p id="email">Email: 'O EMAIL'</p>
+                    <p id="nivel">Pleno</p>
+                    <p id="kindofwork">Home Office</p>
+                </span>
+                <img src="/src/img/purplePen.png" alt="editar" id="caneta">
             </section>
-            <section>
-                <div class="headerSection">
-                    <h2 style="width: 100%;text-align: center;">Usuários cadastrados</h2>
+            <section class="section2">
+                <!-- <div class="headerSection2">
+                    <h2>NOME DA EMPRESA - NOME DO DEPARTAMENTO</h2>
                 </div>
-                <div class="userList">
-                    <ol class="list2">
-                    </ol>
-                </div>
+                <ol class="equipList">
+                    <li class="card">
+                        <h3>Nome da pessoa</h3>
+                        <p>nivel</p>
+                    </li>
+                </ol> -->
+                <h2>Você ainda não foi contratado</h2>
             </section>
-        </div>
-        <div class="dropdown">
-            <div class="item">Todas</div>
         </div>
     </main>
 </body>

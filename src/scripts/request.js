@@ -149,4 +149,84 @@ async function editEmployee(uuid, body, token){
     .catch(err => console.log(err))
 }
 
-export {listAllCompanies, Login, AuthorizationUser, register, listAllDepartments, listAllUsers, getCompany, hire, dismiss, editEmployee}
+async function editDepartment(uuid, body, token){
+    await fetch(`${baseURL}/department/${uuid}`, {
+        'method': 'PATCH',
+        'headers': {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+        'body': body
+    })
+    .then(resp => resp.json())
+    .then(resp => resp)
+    .catch(err => console.log(err))
+}
+
+async function deleteUser(uuid,token){
+    await fetch(`${baseURL}/admin/delete_user/${uuid}`,{
+        method: "DELETE",
+        headers: {
+            "Authorization": `Bearer ${token}`
+        }
+    })
+    .then(resp => resp.json())
+    .then(resp => console.log(resp))
+    .catch(err => console.log(err.error))
+}
+
+async function deleteDepartment(uuid, token){
+    await fetch(`${baseURL}/departments/${uuid}`, {
+        method: "DELETE",
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
+    })
+    .then(resp => resp.json())
+    .then(resp => console.log(resp))
+    .catch(err => console.log(err.error))
+}
+
+async function createDepartement(body, token){
+    await fetch(`${baseURL}/departments`,{
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(body)
+    })
+    .then(resp => resp.json())
+    .then(resp => console.log(resp))
+    .catch(err => console.log(err))
+}
+
+async function getUserDetails(token){
+    const response = await fetch(`${baseURL}/users/profile`, {
+        method: "GET",
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
+    })
+    .then(resp => resp.json())
+    .then(resp => resp)
+    .catch(err => console.log(err))
+
+    return response
+}
+
+async function listAllUsersInTheSameDepartments(token){
+    const response = await fetch(`${baseURL}/users/departments/coworkers`, {
+        method: "GET",
+        headers: {
+            "Authorization": `Bearer ${token}`
+        }
+    })
+    .then(resp => resp.json())
+    .then(resp => resp)
+    .catch(err => console.log(err))
+
+    return response
+}
+
+export {listAllCompanies, Login, AuthorizationUser, register, listAllDepartments, listAllUsers, getCompany, hire, dismiss, editEmployee, editDepartment, deleteUser, deleteDepartment, createDepartement, listAllUsersInTheSameDepartments, getUserDetails}

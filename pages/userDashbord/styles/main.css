@@ -1,0 +1,9 @@
+main{
+    margin-top: 24px;
+}
+
+main > .container{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
