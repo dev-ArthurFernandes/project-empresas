@@ -1,0 +1,155 @@
+.headerSection{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerSection > h2{
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+}
+
+.headerSection > div{
+    width: 282px;
+    height: 32px;
+    border: 1px solid var(--color-black);
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+}
+
+.headerSection > div::after{
+    content: url('/src/img/Vector.png');
+    position: absolute;
+    top: 6px;
+    right: 25px;
+    transform-origin: center;
+    transition: .5s;
+}
+
+.headerSection > div > input{
+    text-align: center;
+    border: none;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.headerSection > button{
+    width: 150px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: var(--color-brand);
+    padding: 0 15px;
+    cursor: pointer;
+}
+
+.headerSection > button > p{
+    width: 100%;
+    color: var(--color-white);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.departmentsList, .userList{
+    width: 100%;
+    height: 385px;
+    background-color: #f8f8f8;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+ol{
+    width: 100%;
+    height: 100%;
+    padding: 34px 56px;
+    display: flex;
+    justify-content: space-between;
+    gap: 28px;
+    flex-wrap: wrap;
+    overflow: auto;
+}
+
+ol::-webkit-scrollbar{
+    display: block;
+    background-color: var(--color-white);
+    height: 5px;
+    width: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+ol::-webkit-scrollbar-thumb{
+    background-color: var(--color-brand);
+    width: 5px;
+    border-radius: 5px;
+}
+
+.card{
+    width: 489px;
+    height: 196px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--color-brand);
+}
+
+.card > h2{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+}
+.card p{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.card > span{
+    width: 100%;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 14px;
+}
+
+.card > span img{
+    cursor: pointer;
+    transition: .5s;
+}
+
+.card > span img:hover{
+    transform: translate(0, -5px);
+}
+
+.dropdown{
+    display: none;
+    width: 282px;
+    height: 100px;
+    position: absolute;
+    top: 150px;
+    right: 762px;
+    border: 1px solid;
+    border-radius: 15px;
+    background-color: var(--color-white);
+    overflow: auto;
+    transition: .5s;
+}
+
+.dropdown::-webkit-scrollbar{
+    display: none;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/src/img/logo_img.svg" type="image/x-icon">
+    <link rel="stylesheet" href="/src/styles/reset.css">
+    <link rel="stylesheet" href="/src/styles/globalStyles.css">
+    <link rel="stylesheet" href="/src/styles/container.css">
+    <link rel="stylesheet" href="/src/styles/logo.css">
+    <link rel="stylesheet" href="/src/styles/selectSector.css">
+    <link rel="stylesheet" href="/src/styles/header.css">
+    <link rel="stylesheet" href="/src/styles/form.css">
+    <link rel="stylesheet" href="/src/styles/modal.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <script defer type="module" src="index.js"></script>
+    <title>Empresas - Login</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logoKenzieCompanies">
+                <img id="logo_img" src="/src/img/logo_img.svg" alt="logo">
+                <img id="logo_title" src="/src/img/Kenzie Empresas.svg" alt="Kenzie Empresas">
+            </div>
+            <button class="Menu">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+        </div>
+        <div class="buttons">
+            <button id="btn_1">Login</button>
+            <button id="btn_2">Cadastro</button>
+        </div>
+    </header>
+    <main>
+        <div class="form">
+            <form class="loginForm">
+                <div class="title">
+                    <h2>Login</h2>
+                    <p>Preencha os campos para realizar o login</p>
+                </div>
+                <div class="inputs">
+                    <input type="email" placeholder="Seu e-mail" name="email" id="email">
+                    <input type="password" placeholder="Sua senha" name="password" id="password">
+                </div>
+                <button id="form_btn1">Login</button>
+                <p>Ou</p>
+                <button id="form_btn2">Cadastre-se</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

@@ -11,10 +11,11 @@
     <link rel="stylesheet" href="/src/styles/logo.css">
     <link rel="stylesheet" href="/src/styles/selectSector.css">
     <link rel="stylesheet" href="/src/styles/header.css ">
+    <link rel="stylesheet" href="/src/styles/modal.css ">
+    <link rel="stylesheet" href="styles/main.css ">
     <link rel="stylesheet" href="styles/sections.css ">
-    <link rel="stylesheet" href="styles/companiesList.css ">
     <script defer type='module' src="index.js"></script>
-    <title>Empresas</title>
+    <title>Empresas - Usuário</title>
 </head>
 <body>
     <header class="header">
@@ -30,42 +31,33 @@
             </button>
         </div>
         <div class="buttons">
-            <button id="btn_1">Login</button>
-            <button id="btn_2">Cadastro</button>
+            <button id="btn_1">Logout</button>
         </div>
     </header>
-    <main style="margin-top: 50px;"> 
+    <main>
         <div class="container">
-            <section class="left">
-                <div class="image"><img src="/src/img/background_imgpng.png" alt="background_img"></div>
+            <section class="section1">
+                <h2 id="nome">USERNAME</h2>
+                <span>
+                    <p id="email">Email: 'O EMAIL'</p>
+                    <p id="nivel">Pleno</p>
+                    <p id="kindofwork">Home Office</p>
+                </span>
+                <img src="/src/img/purplePen.png" alt="editar" id="caneta">
             </section>
-            <section class="right">
-                <div>
-                    <div class="selectSectorDiv">
-                        <input id="selectSector" type="text" placeholder="Selecionar Setor" name="sectors" readonly>
-                        <img src="/src/img/Arrow_down.png" alt="Arrow_down">
-                    </div>
-
+            <section class="section2">
+                <!-- <div class="headerSection2">
+                    <h2>NOME DA EMPRESA - NOME DO DEPARTAMENTO</h2>
                 </div>
-
-                <div>
-                    <ol class="companiesList">
-                    </ol>
-                </div>
-                <div class="dropDown">
-                    <div class="item">Todos</div>
-                    <div class="item">Alimenticio</div>
-                    <div class="item">Varejo</div>
-                    <div class="item">Textil</div>
-                    <div class="item">Manufatura</div>
-                    <div class="item">Aeroespacial</div>
-                    <div class="item">Automotiva</div>
-                    <div class="item">TI</div>
-                    <div class="item">Atacado</div>
-                </div>
+                <ol class="equipList">
+                    <li class="card">
+                        <h3>Nome da pessoa</h3>
+                        <p>nivel</p>
+                    </li>
+                </ol> -->
+                <h2>Você ainda não foi contratado</h2>
             </section>
         </div>
     </main>
-
 </body>
 </html>

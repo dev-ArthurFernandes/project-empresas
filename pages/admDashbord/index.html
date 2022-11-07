@@ -11,10 +11,11 @@
     <link rel="stylesheet" href="/src/styles/logo.css">
     <link rel="stylesheet" href="/src/styles/selectSector.css">
     <link rel="stylesheet" href="/src/styles/header.css ">
+    <link rel="stylesheet" href="/src/styles/modal.css ">
+    <link rel="stylesheet" href="styles/main.css ">
     <link rel="stylesheet" href="styles/sections.css ">
-    <link rel="stylesheet" href="styles/companiesList.css ">
     <script defer type='module' src="index.js"></script>
-    <title>Empresas</title>
+    <title>Empresas - Admin</title>
 </head>
 <body>
     <header class="header">
@@ -30,42 +31,38 @@
             </button>
         </div>
         <div class="buttons">
-            <button id="btn_1">Login</button>
-            <button id="btn_2">Cadastro</button>
+            <button id="btn_1">Logout</button>
         </div>
     </header>
-    <main style="margin-top: 50px;"> 
+    <main>
         <div class="container">
-            <section class="left">
-                <div class="image"><img src="/src/img/background_imgpng.png" alt="background_img"></div>
-            </section>
-            <section class="right">
-                <div>
-                    <div class="selectSectorDiv">
-                        <input id="selectSector" type="text" placeholder="Selecionar Setor" name="sectors" readonly>
-                        <img src="/src/img/Arrow_down.png" alt="Arrow_down">
-                    </div>
-
+            <section>
+                <div class="headerSection">
+                    <h2>Departamentos</h2>
+                    <div id="selectCompany"><input type="text" placeholder="Selecionar Empresa" readonly id="company"></div>
+                    <button class="createDepartements">
+                        <img src="/src/img/plus.png" alt="plus">
+                        <p>Criar</p>
+                    </button>
                 </div>
-
-                <div>
-                    <ol class="companiesList">
+                <div class="departmentsList">
+                    <ol class="list1">
                     </ol>
                 </div>
-                <div class="dropDown">
-                    <div class="item">Todos</div>
-                    <div class="item">Alimenticio</div>
-                    <div class="item">Varejo</div>
-                    <div class="item">Textil</div>
-                    <div class="item">Manufatura</div>
-                    <div class="item">Aeroespacial</div>
-                    <div class="item">Automotiva</div>
-                    <div class="item">TI</div>
-                    <div class="item">Atacado</div>
+            </section>
+            <section>
+                <div class="headerSection">
+                    <h2 style="width: 100%;text-align: center;">Usuários cadastrados</h2>
+                </div>
+                <div class="userList">
+                    <ol class="list2">
+                    </ol>
                 </div>
             </section>
         </div>
+        <div class="dropdown">
+            <div class="item">Todas</div>
+        </div>
     </main>
-
 </body>
 </html>

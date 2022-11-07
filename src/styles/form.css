@@ -1,0 +1,121 @@
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+}
+
+.form{
+    width: 506px;
+    background-color: rgba(255, 255,255,0.9);
+    padding: 40px 20px;
+}
+
+
+
+.title{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.title > h2{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 48px;
+}
+
+.title > p{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: relative;
+}
+
+.inputs input{
+    height: 52px;
+    padding-left: 20px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    border: 1px solid rgba(0,0,0,0.2);
+}
+
+.inputs input:focus{
+    outline: none;
+}
+
+button{
+    height: 48px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    cursor: pointer;
+}
+
+.loginForm > p{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+#form_btn1{
+    background-color: var(--color-brand);
+    color: var(--color-white);
+    border: none;
+}
+
+#form_btn2{
+    background-color: transparent;
+    border:1px solid var(--color-brand);
+    color: var(--color-brand);
+}
+
+.select{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.select::after{
+    content: url('/src/img/Vector.png');
+    position: absolute;
+    top: 17px;
+    right: 15px;
+    transition: .5s;
+}
+
+.selectOptions{
+    display: none;
+    width: 100%;
+    border: 1px solid var(--color-brand);
+    position: absolute;
+    background-color: var(--color-white);
+    bottom: -130px;
+    transition: .5s;
+}
+
+#professional_level{
+    cursor: pointer;
+}
+
+@media(max-width: 1024px){
+    .form{
+        width: 100%;
+    }
+}
