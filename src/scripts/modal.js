@@ -1,5 +1,5 @@
-import { createCard, renderDepartments } from "./admDashbord.js"
-import { dismiss, editDepartment, editEmployee, hire, listAllDepartments, listAllUsers } from "./request.js"
+import { createCard, renderAllUsers, renderDepartments } from "./admDashbord.js"
+import { createDepartement, deleteDepartment, deleteUser, dismiss, editDepartment, editEmployee, hire, listAllCompanies, listAllDepartments, listAllUsers } from "./request.js"
 
 const token = JSON.parse(localStorage.getItem('@KenzieEmpresas:Token'))
 
@@ -23,7 +23,7 @@ async function modal(uuid,type){
     closeModal.classList = 'closeModal'
 
     closeModal.addEventListener('click', () => {
-        body.style.position = ''
+        body.style.position = 'relative'
         modalSection.remove()
     })
 
@@ -31,6 +31,7 @@ async function modal(uuid,type){
 
     
     if(type === 'Contratar'){
+
         const users = await listAllUsers(token)
 
         const section1 = document.createElement('section')
@@ -65,11 +66,11 @@ async function modal(uuid,type){
                 dropDown.style.transform = "translateY(0px)"
                 setTimeout(() => {
                     dropDown.style.display = 'none'
-                    document.styleSheets[6].rules[10].style.transform = 'rotate(0deg)'
+                    document.styleSheets[6].rules[11].style.transform = 'rotate(0deg)'
                 },0)
             }else{
+                document.styleSheets[6].rules[11].style.transform = 'rotate(180deg)'
                 dropDown.style.display = 'block'
-                document.styleSheets[6].rules[10].style.transform = 'rotate(180deg)'
                 setTimeout(() => {
                     dropDown.style.transform = "translateY(5px)"
                 }, 0);
@@ -218,6 +219,9 @@ async function modal(uuid,type){
                 "professional_level": input2.value
             }
             editEmployee(uuid, body, token)
+            renderAllUsers()
+            body.style.position = 'relative'
+            modalSection.remove()
         })
 
         div1.append(input1)
@@ -239,15 +243,156 @@ async function modal(uuid,type){
         
         button.addEventListener('click', () => {
             let body = {
-                "description": textArea.value
+                "description": `${textArea.value}`
             }
             editDepartment(uuid, body,token)
+            modalSection.remove()
         })
 
         modal.append(h2, textArea, button, closeModal)
         modalSection.append(modal)
         body.append(modalSection)
+
+    }else if(type === 'deleteUser'){
+        
+        const users = await listAllUsers(token)
+
+        const user = users.filter(element => element.uuid === uuid)
+
+        const h2 = document.createElement('h2')
+        h2.innerHTML = `Realmente deseja remover o usuário ${user[0].username}`
+        h2.style.textAlign = 'center'
+
+        const  span = document.createElement('span')
+        span.style = 'display: flex; justify-content: center'
+
+        const button = document.createElement('button')
+        button.innerHTML = 'Deletar'
+        button.id = 'Delete'
+
+        button.addEventListener('click', () => {
+            deleteUser(uuid, token)
+            body.style.position = 'relative'
+            modalSection.remove()
+        })
+
+        span.append(button)
+        modal.append(h2, span, closeModal)
+        modalSection.append(modal)
+        body.append(modalSection)
+    }else if(type === 'deleteDepartment'){
+       
+        const users = await listAllUsers(token)
+
+        const departments = await listAllDepartments(token)
+
+        const department = departments.filter(element => element.uuid === uuid)
+
+        console.log(department)
+
+        const h2 = document.createElement('h2')
+        h2.innerHTML = `Realmente deseja deletar o Departamento ${department[0].name} e demitir seus funcionários?`
+        h2.style.textAlign = 'center'
+
+        const  span = document.createElement('span')
+        span.style = 'display: flex; justify-content: center'
+
+        const button = document.createElement('button')
+        button.innerHTML = 'Confirmar'
+        button.id = 'Delete'
+
+        button.addEventListener('click', () => {
+            users.forEach(element => {
+                if(element.department_uuid === uuid){
+                    deleteUser(element.uuid, token)
+                }
+            })
+            deleteDepartment(uuid, token)
+            body.style.position = 'relative'
+            modalSection.remove()
+        })
+
+        span.append(button)
+        modal.append(h2, span, closeModal)
+        modalSection.append(modal)
+        body.append(modalSection)
+    }else if(type === 'createDepartment'){
+        const h2 = document.createElement('h2')
+        h2.innerText = 'Criar Departamento'
+
+        const input1 = document.createElement('input')
+        input1.name = 'name'
+        input1.placeholder = 'Nome do departamento'
+        
+        const input2 = document.createElement('input')
+        input2.name = 'description'
+        input2.placeholder = 'Descrição'
+
+        const div = document.createElement('div')
+        div.id = 'aqueladiv'
+
+        const input3 = document.createElement('input')
+        input3.name = "company.uuid"
+        input3.placeholder = 'Selecionar empresa'
+        input3.setAttribute('readonly', true)
+
+        const dropDown = document.createElement('div')
+        dropDown.classList = "dropdown"
+        dropDown.id = 'companiesDropCreate'
+
+        const companies = await listAllCompanies()
+
+        companies.forEach(element => {
+            const item = document.createElement('div')
+            item.classList = 'item'
+            item.innerHTML = element.name
+            item.id = element.uuid
+
+            item.addEventListener('click', () => {
+                input3.value = item.innerHTML
+                input3.id = item.id
+                dropDown.style.display = 'none'
+                dropDown.style.transform = 'translate(0)'
+            })
+
+            dropDown.append(item)
+        })
+
+        input3.addEventListener('click', () => {
+            if(dropDown.style.display === 'block'){
+                dropDown.style.display = 'none'
+                dropDown.style.transform = 'translate(0)'
+            }else{
+                dropDown.style.display = 'block'
+                setTimeout(() => {
+                    dropDown.style.transform = 'translate(0, 5px)'
+                }, 0);
+            }
+        })
+
+        const button = document.createElement('button')
+        button.innerHTML = 'Criar o departamento'
+        button.classList = 'editar'
+
+        button.addEventListener('click', () => {
+            let corpo = {
+                'name': input1.value,
+                'description': input2.value,
+                'company_uuid': input3.id
+            }
+
+            createDepartement(corpo, token)
+            renderDepartments()
+            modalSection.remove()
+        })
+
+        div.append(input3)
+        modal.append(h2, input1, input2, div, button, closeModal, dropDown)
+        modalSection.append(modal)
+        body.append(modalSection)
     }
+    body.style.display = 'relative'
+    
 }
 
 async function renderDepartmentUsers(departmentName, uuid) {

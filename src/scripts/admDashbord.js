@@ -1,7 +1,8 @@
 import { getCompany, listAllCompanies, listAllDepartments, listAllUsers } from "./request.js"
+import modal from './modal.js';
 
 function createCard(element, companyName){
-
+    
     const li = document.createElement('li')
     li.id = element.uuid
     li.classList = 'card'
@@ -34,17 +35,39 @@ function createCard(element, companyName){
     eye.src = '/src/img/olho.png'
     eye.alt = 'olho'
 
+    eye.addEventListener('click', () => {
+        modal(element.uuid, 'Contratar')
+    })
+
     const blackPen = document.createElement('img')
     blackPen.src = '/src/img/blackPen.png'
     blackPen.alt = 'Caneta preta'
+
+    blackPen.addEventListener('click', () => {
+        modal(element.uuid, 'departmentEdit')
+    })
 
     const purplePen = document.createElement('img')
     purplePen.src = '/src/img/purplePen.png'
     purplePen.alt = 'Caneta Roxa'
 
+    purplePen.addEventListener('click', () => {
+        modal(element.uuid, 'editarUser')
+    })
+
     const trash = document.createElement("img")
     trash.src = '/src/img/Trash.png'
     trash.alt = 'Trash'
+
+    if(element.description){
+        trash.addEventListener('click', () => {
+            modal(element.uuid, 'deleteDepartment')
+        })
+    }else{
+        trash.addEventListener('click', () => {
+            modal(element.uuid, 'deleteUser')
+        })
+    }
 
     if(element.description){
         span.append(eye, blackPen, trash)
