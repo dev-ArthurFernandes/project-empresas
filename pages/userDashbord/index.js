@@ -1,5 +1,5 @@
-import { getUserDetails, listAllUsersInTheSameDepartments } from "../../src/scripts/request.js";
-import mainMenu from './../../src/scripts/menu.js';
+import { getUserDetails, listAllUsersInTheSameDepartments } from "../..../../src/scripts/request.js";
+import mainMenu from './../..../../src/scripts/menu.js';
 
 
 

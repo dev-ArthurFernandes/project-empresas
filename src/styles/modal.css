@@ -90,7 +90,7 @@
 }
 
 .div2::after{
-    content: url('/src/img/Vector.png');
+    content: url('../../src/img/Vector.png');
     position: absolute;
     top: 13px;
     right: 20px;
@@ -231,7 +231,7 @@
 }
 
 #input1::after{
-    content: url('/src/img/Vector.png');
+    content: url('../../src/img/Vector.png');
     position: absolute;
     top: 18px;
     right: 0;
@@ -262,7 +262,7 @@
 }
 
 #input2::after{
-    content: url('/src/img/Vector.png');
+    content: url('../../src/img/Vector.png');
     position: absolute;
     top: 18px;
     right: 0;
@@ -354,7 +354,7 @@
 
 
 #aqueladiv::after{
-    content: url('/src/img/Vetor.png');
+    content: url('../../src/img/Vetor.png');
     position: absolute;
     top: 16px;
     right: 5px;

@@ -32,7 +32,7 @@ function createCard(element, companyName){
     const span = document.createElement('span')
 
     const eye = document.createElement('img')
-    eye.src = '/src/img/olho.png'
+    eye.src = '../../src/img/olho.png'
     eye.alt = 'olho'
 
     eye.addEventListener('click', () => {
@@ -40,7 +40,7 @@ function createCard(element, companyName){
     })
 
     const blackPen = document.createElement('img')
-    blackPen.src = '/src/img/blackPen.png'
+    blackPen.src = '../../src/img/blackPen.png'
     blackPen.alt = 'Caneta preta'
 
     blackPen.addEventListener('click', () => {
@@ -48,7 +48,7 @@ function createCard(element, companyName){
     })
 
     const purplePen = document.createElement('img')
-    purplePen.src = '/src/img/purplePen.png'
+    purplePen.src = '../../src/img/purplePen.png'
     purplePen.alt = 'Caneta Roxa'
 
     purplePen.addEventListener('click', () => {
@@ -56,7 +56,7 @@ function createCard(element, companyName){
     })
 
     const trash = document.createElement("img")
-    trash.src = '/src/img/Trash.png'
+    trash.src = '../../src/img/Trash.png'
     trash.alt = 'Trash'
 
     if(element.description){

@@ -18,7 +18,7 @@ async function modal(uuid,type){
     modal.classList = 'modal'
 
     const closeModal = document.createElement('img')
-    closeModal.src = '/src/img/X.png'
+    closeModal.src = '../../src/img/X.png'
     closeModal.alt = 'Close'
     closeModal.classList = 'closeModal'
 

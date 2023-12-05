@@ -93,7 +93,7 @@ button{
 }
 
 .select::after{
-    content: url('/src/img/Vector.png');
+    content: url('../../src/img/Vector.png');
     position: absolute;
     top: 17px;
     right: 15px;
